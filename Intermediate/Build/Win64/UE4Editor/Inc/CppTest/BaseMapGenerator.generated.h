@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CPPTEST_BaseMapGenerator_generated_h
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_RPC_WRAPPERS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execgetTileSize) \
 	{ \
@@ -64,7 +64,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execgetTileSize) \
 	{ \
@@ -115,7 +115,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_INCLASS_NO_PURE_DECLS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseMapGenerator(); \
 	friend CPPTEST_API class UClass* Z_Construct_UClass_ABaseMapGenerator(); \
@@ -125,7 +125,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_INCLASS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesABaseMapGenerator(); \
 	friend CPPTEST_API class UClass* Z_Construct_UClass_ABaseMapGenerator(); \
@@ -135,7 +135,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_STANDARD_CONSTRUCTORS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABaseMapGenerator(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseMapGenerator) \
@@ -148,7 +148,7 @@ private: \
 public:
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_ENHANCED_CONSTRUCTORS \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABaseMapGenerator(ABaseMapGenerator&&); \
@@ -159,7 +159,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseMapGenerator); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABaseMapGenerator)
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_PRIVATE_PROPERTY_OFFSET \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__mapWidth() { return STRUCT_OFFSET(ABaseMapGenerator, mapWidth); } \
 	FORCEINLINE static uint32 __PPO__mapHeight() { return STRUCT_OFFSET(ABaseMapGenerator, mapHeight); } \
 	FORCEINLINE static uint32 __PPO__AllowedTiles() { return STRUCT_OFFSET(ABaseMapGenerator, AllowedTiles); } \
@@ -167,25 +167,25 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseMapGenerator); \
 	FORCEINLINE static uint32 __PPO__tilePadding() { return STRUCT_OFFSET(ABaseMapGenerator, tilePadding); }
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_12_PROLOG
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_GENERATED_BODY_LEGACY \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_13_PROLOG
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_PRIVATE_PROPERTY_OFFSET \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_RPC_WRAPPERS \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_INCLASS \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_STANDARD_CONSTRUCTORS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_PRIVATE_PROPERTY_OFFSET \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_INCLASS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_GENERATED_BODY \
+#define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_PRIVATE_PROPERTY_OFFSET \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_INCLASS_NO_PURE_DECLS \
-	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_15_ENHANCED_CONSTRUCTORS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_PRIVATE_PROPERTY_OFFSET \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_INCLASS_NO_PURE_DECLS \
+	CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

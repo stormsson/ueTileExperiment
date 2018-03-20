@@ -1,16 +1,22 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BaseMapGenerator.h"
-#include "Engine.h"
 
 
 
 // Sets default values
-ABaseMapGenerator::ABaseMapGenerator()
+ABaseMapGenerator::ABaseMapGenerator() : ABaseMapGenerator(8, 8) {}
+
+
+ABaseMapGenerator::ABaseMapGenerator(int w, int h)
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	this->mapWidth = w;
+	this->mapHeight = h;
+
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 	this->generateAllowedTilesReferences();
+
 }
 
 // Called when the game starts or when spawned
@@ -29,7 +35,7 @@ void ABaseMapGenerator::Tick(float DeltaTime)
 
 
 int32 ABaseMapGenerator::generateAllowedTilesReferences()
-{
+{																		   
 	static ConstructorHelpers::FObjectFinder<UBlueprint> AsphaltTile(TEXT("Blueprint'/Game/MapGenerator/Tiles/TileAsphalt.TileAsphalt'"));
 
 	if (AsphaltTile.Object) {
@@ -68,7 +74,7 @@ void ABaseMapGenerator::buildMap()
 
 			FVector spawnLocation = FVector(baseLocation + spawnOffset);
 			
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, "Row: "+ FString::FromInt(rowIndex)+" Col: "+ FString::FromInt(colIndex));
+			//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, "Row: "+ FString::FromInt(rowIndex)+" Col: "+ FString::FromInt(colIndex));
 			ABaseTile* spawnedTile = GetWorld()->SpawnActor<ABaseTile>(tileToSpawn->GeneratedClass);
 			if (spawnedTile == nullptr) {
 				GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Red, "Could not spawn tile");

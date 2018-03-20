@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Engine.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "BaseTile.h"
@@ -17,16 +18,18 @@ class CPPTEST_API ABaseMapGenerator : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABaseMapGenerator();
+
+	ABaseMapGenerator(int,  int);
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, Category = "Map|Setup")
-		int mapWidth = 8;
+	int mapWidth = 8;
 
 	UPROPERTY(EditAnywhere, Category = "Map|Setup")
-		int mapHeight = 8;
+	int mapHeight = 8;
 	
 	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
 	virtual int32 generateAllowedTilesReferences();
@@ -38,7 +41,7 @@ protected:
 	TArray<UBlueprint*> AllowedTiles;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Tiles")
-	int32 tileSize = 100;
+	int32 tileSize = 400;
 
 	UPROPERTY(EditAnywhere, Category = "Tiles")
 	float tilePadding = .05f;
