@@ -52,9 +52,21 @@
     <ClInclude Include="..\..\Source\CppTest\BaseMap.h">
       <Filter>Source\CppTest</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\CppTest\BaseCitizen.h">
+      <Filter>Source\CppTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CppTest\UtilityTimer.h">
+      <Filter>Source\CppTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\CppTest\BaseMap.cpp">
+      <Filter>Source\CppTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CppTest\BaseCitizen.cpp">
+      <Filter>Source\CppTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CppTest\UtilityTimer.cpp">
       <Filter>Source\CppTest</Filter>
     </ClCompile>
   </ItemGroup>

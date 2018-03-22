@@ -406,14 +406,18 @@
     <NMakeOutput>..\..\Binaries\HTML5\CppTest-HTML5-Shipping.js</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\CppTest\UtilityTimer.cpp" />
+    <ClInclude Include="..\..\Source\CppTest\UtilityTimer.h" />
     <None Include="..\..\CppTest.uproject" />
     <None Include="..\..\Source\CppTest.Target.cs" />
     <None Include="..\..\Source\CppTestEditor.Target.cs" />
     <None Include="..\..\Config\DefaultEditor.ini" />
     <None Include="..\..\Config\DefaultEngine.ini" />
     <None Include="..\..\Config\DefaultGame.ini" />
+    <ClCompile Include="..\..\Source\CppTest\BaseCitizen.cpp" />
     <ClCompile Include="..\..\Source\CppTest\BaseMap.cpp" />
     <ClCompile Include="..\..\Source\CppTest\BaseMapGenerator.cpp" />
+    <ClInclude Include="..\..\Source\CppTest\BaseCitizen.h" />
     <ClInclude Include="..\..\Source\CppTest\BaseMap.h" />
     <ClInclude Include="..\..\Source\CppTest\BaseMapGenerator.h" />
     <ClCompile Include="..\..\Source\CppTest\BaseTile.cpp" />

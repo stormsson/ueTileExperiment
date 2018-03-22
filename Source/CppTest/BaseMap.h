@@ -8,6 +8,17 @@
 #include "BaseMapGenerator.h"
 #include "BaseMap.generated.h"
 
+USTRUCT(BlueprintType)
+struct FMapRow {
+	GENERATED_USTRUCT_BODY()
+
+	TArray<ABaseTile*> row;
+
+	ABaseTile*& operator[](int32 idx) { return row[idx]; }
+	bool IsValidIndex(int32 idx) { return row.IsValidIndex(idx); }
+	
+};
+
 UCLASS()
 class CPPTEST_API ABaseMap : public AActor
 {
@@ -22,14 +33,30 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-	ABaseMapGenerator* mapGenerator = nullptr;
+	UBlueprint* mapGeneratorReference = nullptr;
 
-	UPROPERTY(EditAnywhere, Category = "Map|Setup")
+	UPROPERTY(BlueprintReadOnly)
+	ABaseMapGenerator* mapGenerator = nullptr;
+	
+	UPROPERTY(EditAnywhere, Category = "Setup")
 	int mapWidth = 8;
+
+	/*pippo pluto paperino*/
+	UPROPERTY(EditAnywhere, Category = "Setup")
+	int mapHeight = 8;
+
+	void instantiateMapGenerator();	
+
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	ABaseTile* getTileAtCoords(int32 x, int32 y);
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Tiles")
+	TArray<FMapRow> tiles;
 
 	
 	

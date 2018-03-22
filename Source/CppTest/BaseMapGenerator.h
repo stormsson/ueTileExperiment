@@ -30,15 +30,17 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Map|Setup")
 	int mapHeight = 8;
+
+	UPROPERTY(EditAnywhere, Category = "Map|Setup")
+	ABaseMap* map = nullptr;
 	
 	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
 	virtual int32 generateAllowedTilesReferences();
 
-	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
-	void buildMap();
+
 
 	UPROPERTY(EditAnywhere, Category = "Tiles")
-	TArray<UBlueprint*> AllowedTiles;
+	TArray<UClass*> AllowedTiles;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Tiles")
 	int32 tileSize = 400;
@@ -46,6 +48,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Tiles")
 	float tilePadding = .05f;
 
+	void generateMap();
 	
 public:	
 	// Called every frame
@@ -62,5 +65,21 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE int32 getTileSize() const { return tileSize; }
+
+	UFUNCTION(BlueprintCallable)
+	void setMapWidth(int32 w) { mapWidth = w;  }
+
+	UFUNCTION(BlueprintCallable)
+	void setMapHeight(int32 h) { mapHeight = h; }
+
+	UFUNCTION(BlueprintPure)
+	FORCEINLINE ABaseMap* getMap() { return map; }
+
+	UFUNCTION(BlueprintCallable)
+	void setMap(ABaseMap* m) { map = m;  }
+	
+
+	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
+	void buildMap(int32 w, int32 h);
 
 };

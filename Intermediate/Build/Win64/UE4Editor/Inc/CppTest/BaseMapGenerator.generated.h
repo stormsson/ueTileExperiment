@@ -8,12 +8,58 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ABaseMap;
 #ifdef CPPTEST_BaseMapGenerator_generated_h
 #error "BaseMapGenerator.generated.h already included, missing '#pragma once' in BaseMapGenerator.h"
 #endif
 #define CPPTEST_BaseMapGenerator_generated_h
 
 #define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execbuildMap) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_w); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_h); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->buildMap(Z_Param_w,Z_Param_h); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMap) \
+	{ \
+		P_GET_OBJECT(ABaseMap,Z_Param_m); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMap(Z_Param_m); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execgetMap) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(ABaseMap**)Z_Param__Result=P_THIS->getMap(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMapHeight) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_h); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMapHeight(Z_Param_h); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMapWidth) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_w); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMapWidth(Z_Param_w); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execgetTileSize) \
 	{ \
@@ -44,14 +90,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(int32*)Z_Param__Result=P_THIS->getMapWidth(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execbuildMap) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->buildMap(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -66,6 +104,51 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execbuildMap) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_w); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_h); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->buildMap(Z_Param_w,Z_Param_h); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMap) \
+	{ \
+		P_GET_OBJECT(ABaseMap,Z_Param_m); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMap(Z_Param_m); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execgetMap) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(ABaseMap**)Z_Param__Result=P_THIS->getMap(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMapHeight) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_h); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMapHeight(Z_Param_h); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execsetMapWidth) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_w); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->setMapWidth(Z_Param_w); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execgetTileSize) \
 	{ \
 		P_FINISH; \
@@ -95,14 +178,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		*(int32*)Z_Param__Result=P_THIS->getMapWidth(); \
-		P_NATIVE_END; \
-	} \
- \
-	DECLARE_FUNCTION(execbuildMap) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->buildMap(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -162,6 +237,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseMapGenerator); \
 #define CppTest_4_19_Source_CppTest_BaseMapGenerator_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__mapWidth() { return STRUCT_OFFSET(ABaseMapGenerator, mapWidth); } \
 	FORCEINLINE static uint32 __PPO__mapHeight() { return STRUCT_OFFSET(ABaseMapGenerator, mapHeight); } \
+	FORCEINLINE static uint32 __PPO__map() { return STRUCT_OFFSET(ABaseMapGenerator, map); } \
 	FORCEINLINE static uint32 __PPO__AllowedTiles() { return STRUCT_OFFSET(ABaseMapGenerator, AllowedTiles); } \
 	FORCEINLINE static uint32 __PPO__tileSize() { return STRUCT_OFFSET(ABaseMapGenerator, tileSize); } \
 	FORCEINLINE static uint32 __PPO__tilePadding() { return STRUCT_OFFSET(ABaseMapGenerator, tilePadding); }
