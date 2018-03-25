@@ -48,7 +48,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Tiles")
 	float tilePadding = .05f;
 
-	void generateMap();
+	virtual void generateMap();
 	
 public:	
 	// Called every frame

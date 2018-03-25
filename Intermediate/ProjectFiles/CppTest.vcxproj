@@ -406,7 +406,11 @@
     <NMakeOutput>..\..\Binaries\HTML5\CppTest-HTML5-Shipping.js</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\CppTest\StaticMeshMapGenerator.cpp" />
+    <ClCompile Include="..\..\Source\CppTest\TileComponent.cpp" />
     <ClCompile Include="..\..\Source\CppTest\UtilityTimer.cpp" />
+    <ClInclude Include="..\..\Source\CppTest\StaticMeshMapGenerator.h" />
+    <ClInclude Include="..\..\Source\CppTest\TileComponent.h" />
     <ClInclude Include="..\..\Source\CppTest\UtilityTimer.h" />
     <None Include="..\..\CppTest.uproject" />
     <None Include="..\..\Source\CppTest.Target.cs" />

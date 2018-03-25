@@ -45,6 +45,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Setup")
 	int mapHeight = 8;
 
+	UFUNCTION(BlueprintCallable, Category="Setup")
 	void instantiateMapGenerator();	
 
 

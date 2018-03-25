@@ -35,6 +35,7 @@ void ABaseMapGenerator::Tick(float DeltaTime)
 
 int32 ABaseMapGenerator::generateAllowedTilesReferences()
 {							
+	//GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Blue, "ABaseMapGenerator::generateAllowedTilesReferences");
 	static ConstructorHelpers::FObjectFinder<UClass> AsphaltTile(TEXT("Class'/Game/MapGenerator/Tiles/TileAsphalt.TileAsphalt_C'"));
 
 	if (AsphaltTile.Object) {
@@ -54,6 +55,7 @@ void ABaseMapGenerator::buildMap(int32 w=NULL, int32 h=NULL)
 
 void ABaseMapGenerator::generateMap()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Blue, "ABaseMapGenerator::generateMap");
 
 	FVector baseLocation = this->GetActorLocation();
 	if (this->AllowedTiles.Num() == 0)

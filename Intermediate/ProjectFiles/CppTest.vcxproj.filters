@@ -58,6 +58,12 @@
     <ClInclude Include="..\..\Source\CppTest\UtilityTimer.h">
       <Filter>Source\CppTest</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\CppTest\StaticMeshMapGenerator.h">
+      <Filter>Source\CppTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CppTest\TileComponent.h">
+      <Filter>Source\CppTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\CppTest\BaseMap.cpp">
@@ -67,6 +73,12 @@
       <Filter>Source\CppTest</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\CppTest\UtilityTimer.cpp">
+      <Filter>Source\CppTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CppTest\StaticMeshMapGenerator.cpp">
+      <Filter>Source\CppTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CppTest\TileComponent.cpp">
       <Filter>Source\CppTest</Filter>
     </ClCompile>
   </ItemGroup>

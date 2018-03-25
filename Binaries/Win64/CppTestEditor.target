@@ -16,15 +16,15 @@
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CppTest-9915.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CppTest-9826.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CppTest-9915.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CppTest-9826.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-CppTest-9915.lib",
+			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-CppTest-9826.lib",
 			"Type": "ImportLibrary"
 		},
 		{

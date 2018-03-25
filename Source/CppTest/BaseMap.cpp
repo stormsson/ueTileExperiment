@@ -7,18 +7,28 @@
 ABaseMap::ABaseMap()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
-
-
+	PrimaryActorTick.bCanEverTick = false;		
 }
 
 void ABaseMap::instantiateMapGenerator()
 {
-
-	UE_LOG(LogTemp, Error, TEXT("Map %s has been initialized without Map Generator!"), *this->GetFName().ToString());
-	UClass* classReference = this->mapGeneratorReference->GeneratedClass;
 	
-	this->mapGenerator = GetWorld()->SpawnActor<ABaseMapGenerator>(this->mapGeneratorReference->GeneratedClass);  
+	UE_LOG(LogTemp, Warning, TEXT("Starting map generation!"));
+	if (mapGeneratorReference == nullptr)
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Red, "Map Generator not setup!");
+		UE_LOG(LogTemp, Error, TEXT("Map %s has been initialized without Map Generator Reference!"), *this->GetFName().ToString());
+		return;
+	}
+
+	
+	this->mapGenerator = GetWorld()->SpawnActor<ABaseMapGenerator>(mapGeneratorReference->GeneratedClass);  
+	if (this->mapGenerator == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Could not create Map Generator from Reference in Map %s !"), *this->GetFName().ToString());
+		return;
+	}
+
 	this->mapGenerator->SetActorLocation(this->GetActorLocation());
 	this->mapGenerator->setMap(this);
 	this->mapGenerator->buildMap(mapWidth, mapHeight);

@@ -1,4 +1,4 @@
-CppTest/Binaries/Win64/CppTest.exe	2018-03-22T22:08:49.001Z
+CppTest/Binaries/Win64/CppTest.exe	2018-03-23T13:35:10.698Z
 Engine/Binaries/ThirdParty/Oculus/OVRPlugin/OVRPlugin/Win64/OVRPlugin.dll	2018-03-17T14:08:24.969Z
 Engine/Binaries/ThirdParty/NVIDIA/NVaftermath/Win64/GFSDK_Aftermath_Lib.x64.dll	2018-03-17T14:08:23.561Z
 Engine/Binaries/ThirdParty/Windows/DirectX/x64/WinPixEventRuntime.dll	2018-03-17T14:08:57.274Z
@@ -15,4 +15,4 @@ Engine/Binaries/ThirdParty/Ogg/Win64/VS2015/libogg_64.dll	2018-03-17T14:08:24.97
 Engine/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbis_64.dll	2018-03-17T14:08:57.248Z
 Engine/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbisfile_64.dll	2018-03-17T14:08:57.250Z
 Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_10/Win64/openvr_api.dll	2018-03-17T14:08:26.995Z
-CppTest.exe	2018-03-22T22:13:55.162Z
+CppTest.exe	2018-03-23T13:35:15.999Z
