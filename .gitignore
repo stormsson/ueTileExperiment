@@ -261,6 +261,6 @@ __pycache__/
 *.pyc
 
 Binaries/*
-Intermediate/
-Saved/Crashes/*
-Saved/Temp/*
+Intermediate/*
+Saved/*
+Plugins/*/Intermediate/*

@@ -3,19 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/StaticMeshComponent.h"
+#include "Components/InstancedStaticMeshComponent.h"
 #include "BaseTile.h"
-#include "TileComponent.generated.h"
+#include "TileFactoryComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class CPPTEST_API UTileComponent : public UStaticMeshComponent
+class CPPTEST_API UTileFactoryComponent : public UInstancedStaticMeshComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UTileComponent();
+	UTileFactoryComponent();
+
 
 protected:
 	// Called when the game starts
@@ -26,6 +27,15 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UPROPERTY(BlueprintReadWrite, VisibleInstanceOnly, Category = "Map Properties")
-	FMapCoordinates mapPosition;
+	TMap<int32, FMapCoordinates> mapCoordinates;
 
+	UFUNCTION(BlueprintCallable, Category= "Map Properties")
+	void setMapCoordinates(int32 index, FMapCoordinates newCoordinates);
+
+	UFUNCTION(BlueprintCallable, Category = "Map Properties")
+	FMapCoordinates getMapCoordinates(int32 index);
+
+	UPROPERTY(BlueprintReadWrite, VisibleInstanceOnly, Category = "Map Properties")
+	FName Tile_ID = FName(NAME_None);
+	
 };

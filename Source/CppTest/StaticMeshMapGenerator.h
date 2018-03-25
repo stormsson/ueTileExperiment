@@ -5,7 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "BaseMapGenerator.h"
+#include "TileFactoryComponent.h"
 #include "StaticMeshMapGenerator.generated.h"
+
 
 UCLASS()
 class CPPTEST_API AStaticMeshMapGenerator : public ABaseMapGenerator
@@ -26,6 +28,18 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
 	virtual int32 generateAllowedTilesReferences() override;
+
+	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
+	void createTileFactoryComponent(FName Tile_ID, UStaticMesh* staticMesh);
+
+	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
+	int32 generateFactories();
+
+	UFUNCTION(BlueprintCallable, Category = "Map|Factory")
+	UTileFactoryComponent* getTileFactoryByTileID(FName Tile_ID);
+
+	TMap<FName, UTileFactoryComponent*> tileFactories;
+
 
 	virtual void generateMap() override;
 
