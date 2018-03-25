@@ -262,3 +262,5 @@ __pycache__/
 
 Binaries/*
 Intermediate/
+Saved/Crashes/*
+Saved/Temp/*
