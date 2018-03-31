@@ -38,7 +38,6 @@ protected:
 	virtual int32 generateAllowedTilesReferences();
 
 
-
 	UPROPERTY(EditAnywhere, Category = "Tiles")
 	TArray<UClass*> AllowedTiles;
 	

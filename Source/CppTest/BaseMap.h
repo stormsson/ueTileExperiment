@@ -6,6 +6,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "BaseMapGenerator.h"
+#include "TileData.h"
 #include "BaseMap.generated.h"
 
 USTRUCT(BlueprintType)
@@ -32,12 +33,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-	UBlueprint* mapGeneratorReference = nullptr;
+	UPROPERTY(BlueprintReadOnly, Category = "Setup")
+	ABaseMapGenerator* mapGeneratorInstance = nullptr;
 
-	UPROPERTY(BlueprintReadOnly)
-	ABaseMapGenerator* mapGenerator = nullptr;
-	
+	// not visible from blueprint
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	TSubclassOf<ABaseMapGenerator> mapGeneratorReference = nullptr;
+
 	UPROPERTY(EditAnywhere, Category = "Setup")
 	int mapWidth = 8;
 

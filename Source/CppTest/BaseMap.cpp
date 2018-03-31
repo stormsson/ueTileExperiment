@@ -14,24 +14,17 @@ void ABaseMap::instantiateMapGenerator()
 {
 	
 	UE_LOG(LogTemp, Warning, TEXT("Starting map generation!"));
-	if (mapGeneratorReference == nullptr)
-	{
-		//GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Red, "Map Generator not setup!");
-		UE_LOG(LogTemp, Error, TEXT("Map %s has been initialized without Map Generator Reference!"), *this->GetFName().ToString());
-		return;
-	}
 
-	
-	this->mapGenerator = GetWorld()->SpawnActor<ABaseMapGenerator>(mapGeneratorReference->GeneratedClass);  
-	if (this->mapGenerator == nullptr)
+	this->mapGeneratorInstance = GetWorld()->SpawnActor<ABaseMapGenerator>(this->mapGeneratorReference);
+	if (this->mapGeneratorInstance == nullptr)
 	{
 		UE_LOG(LogTemp, Error, TEXT("Could not create Map Generator from Reference in Map %s !"), *this->GetFName().ToString());
 		return;
 	}
 
-	this->mapGenerator->SetActorLocation(this->GetActorLocation());
-	this->mapGenerator->setMap(this);
-	this->mapGenerator->buildMap(mapWidth, mapHeight);
+	this->mapGeneratorInstance->SetActorLocation(this->GetActorLocation());
+	this->mapGeneratorInstance->setMap(this);
+	this->mapGeneratorInstance->buildMap(mapWidth, mapHeight);
 	GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Green, "Finished map generation");
 
 
@@ -51,8 +44,7 @@ void ABaseMap::BeginPlay()
 
 	if (this->mapGeneratorReference == nullptr)
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Red, "Map Generator not setup!");
-		UE_LOG(LogTemp, Error, TEXT("Map %s has been initialized without Map Generator!"), *this->GetFName().ToString());
+		UE_LOG(LogTemp, Error, TEXT("Map %s has been initialized without Map Generator Reference!"), *this->GetFName().ToString());
 		return;
 	}
 

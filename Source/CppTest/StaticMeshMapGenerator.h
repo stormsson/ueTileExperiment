@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "BaseMapGenerator.h"
+#include "TileData.h"
 #include "TileFactoryComponent.h"
 #include "StaticMeshMapGenerator.generated.h"
 
@@ -23,11 +24,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, Category = "Tiles")
-	TArray<UStaticMesh*> AllowedMeshes;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Tiles")
+	UTileData* TilesDatabaseReference = nullptr;
 
-	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
-	virtual int32 generateAllowedTilesReferences() override;
 
 	UFUNCTION(BlueprintCallable, Category = "Map|Construction")
 	void createTileFactoryComponent(FName Tile_ID, UStaticMesh* staticMesh);
