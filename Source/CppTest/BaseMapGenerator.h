@@ -52,7 +52,12 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	/*
+	UFUNCTION(BlueprintNativeEvent)
+	virtual void OnBeginCursorOver(AActor*);
 
+	virtual void OnBeginCursorOver_Implementation(AActor*);
+	*/
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE int getMapWidth() const { return mapWidth; }
 

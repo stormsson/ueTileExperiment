@@ -15,7 +15,7 @@ AStaticMeshMapGenerator::AStaticMeshMapGenerator(int w, int h)
 	this->mapHeight = h;
 
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;		
+	PrimaryActorTick.bCanEverTick = false;
 
 } 
 
@@ -23,6 +23,9 @@ AStaticMeshMapGenerator::AStaticMeshMapGenerator(int w, int h)
 void AStaticMeshMapGenerator::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	this->OnBeginCursorOver.AddDynamic(this, &AStaticMeshMapGenerator::OnHover);
+
 
 
 }
@@ -44,6 +47,9 @@ void AStaticMeshMapGenerator::createTileFactoryComponent(FName Tile_ID, UStaticM
 
 	factory->SetSimulatePhysics(false);
 	factory->SetupAttachment(RootComponent);
+	
+	// custom depth to enable outline
+	factory->SetRenderCustomDepth(true);
 
 	factory->SetStaticMesh(staticMesh);	
 	factory->RegisterComponent();
@@ -148,5 +154,12 @@ void AStaticMeshMapGenerator::generateMap()
 
 	}
 	GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Silver, "map generation time:" + FString::FromInt(t.tock(TEXT("FullMap"))) + " ms!");
+
+}
+
+
+void AStaticMeshMapGenerator::OnHover(AActor* TouchedActor)
+{
+	UE_LOG(LogTemp, Error, TEXT("test!"));
 
 }

@@ -56,7 +56,7 @@ void ABaseMapGenerator::buildMap(int32 w=NULL, int32 h=NULL)
 void ABaseMapGenerator::generateMap()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 8.0f, FColor::Blue, "ABaseMapGenerator::generateMap");
-
+	
 	FVector baseLocation = this->GetActorLocation();
 	if (this->AllowedTiles.Num() == 0)
 	{

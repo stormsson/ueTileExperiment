@@ -46,6 +46,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void OnBeginCursorOver(AActor* TouchedActor);
+
+
+	UFUNCTION()
+	void OnHover(AActor* pippo);
 	
 };
