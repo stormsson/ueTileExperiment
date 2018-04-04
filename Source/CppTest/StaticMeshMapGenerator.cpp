@@ -16,17 +16,13 @@ AStaticMeshMapGenerator::AStaticMeshMapGenerator(int w, int h)
 
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-
+	OnBeginCursorOver.AddDynamic(this, &AStaticMeshMapGenerator::OnHover);
 } 
 
 // Called when the game starts or when spawned
 void AStaticMeshMapGenerator::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	this->OnBeginCursorOver.AddDynamic(this, &AStaticMeshMapGenerator::OnHover);
-
-
 
 }
 
@@ -160,6 +156,27 @@ void AStaticMeshMapGenerator::generateMap()
 
 void AStaticMeshMapGenerator::OnHover(AActor* TouchedActor)
 {
-	UE_LOG(LogTemp, Error, TEXT("test!"));
+
+	APlayerController* ctrl = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	float mouseXPos = .0f;
+	float mouseYPos = .0f;
+
+	ctrl->GetMousePosition(mouseXPos, mouseYPos);
+	
+	FHitResult hitRes;
+
+	if (ctrl->GetHitResultUnderCursorByChannel(UEngineTypes::ConvertToTraceType(ECC_Visibility), true, hitRes))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HIT: Mouse cursor position: %f %f"), mouseXPos, mouseYPos);
+		FVector startingPoint;
+		FVector worldDirection;
+		ctrl->DeprojectMousePositionToWorld(startingPoint, worldDirection);
+		FColor lineColor = FColor(51, 153, 255, 0);
+		DrawDebugLine(GetWorld(), startingPoint, hitRes.ImpactPoint, lineColor, false, 5.0f, 0, 5.0f);
+	}
+
+
+
+
 
 }
